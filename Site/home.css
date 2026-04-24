@@ -85,6 +85,15 @@ nav{
   width: auto;
   display: block;
   border-radius: 15px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.carrossel-item img:hover {
+
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 .detalhamento{

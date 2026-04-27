@@ -1,0 +1,142 @@
+ :root {
+            --bg: #F2F2F2;
+            --surface: #FFFFFF;
+            --border: #E0E0E0;
+            --accent: #111111;
+            --text: #111111;
+            --muted: #888888;
+            --ok: #2a7d3f;
+            --erro: #cc3333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signup-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 40px 16px;
+        }
+
+        .formulario.glass-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .campo label {
+            font-size: 13px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .campo input {
+            background: #FAFAFA;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text);
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .campo input:focus {
+            border-color: var(--accent);
+        }
+
+        .campo input:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .msg-erro {
+            color: var(--erro);
+            font-size: 13px;
+            min-height: 18px;
+            display: block;
+        }
+
+        .validacao-senha-mensagem {
+            background: #FAFAFA;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .validacao-senha-mensagem label {
+            color: var(--muted);
+            display: block;
+            transition: color 0.2s;
+        }
+
+        #inicio_requisitos {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .botao button {
+            width: 100%;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            transition: opacity 0.2s;
+        }
+
+        .botao button:hover {
+            opacity: 0.8;
+        }
+
+        .rodape-form {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .link-acao {
+            color: var(--accent);
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: underline;
+        }

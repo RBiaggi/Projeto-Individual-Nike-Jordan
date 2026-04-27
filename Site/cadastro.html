@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro</title>
+</head>
+<body>
+
+<div class="signup-wrapper">
+    <div class="formulario glass-card">
+        <h1>Cadastre-se</h1>
+
+        <!-- Username -->
+        <div class="campo">
+            <label for="username_input">Username</label>
+            <input onblur="validarUsername()" id="username_input" type="text">
+            <label id="label_validar_username" class="msg-erro"></label>
+        </div>
+
+        <!-- Senha -->
+        <div class="campo">
+            <label for="senha_input">Senha</label>
+            <input oninput="validarSenha()" id="senha_input" type="password" maxlength="20">
+        </div>
+
+        <!-- Requisitos de senha -->
+        <div class="validacao-senha-mensagem">
+            <label id="inicio_requisitos">A senha deve conter:</label>
+            <label id="label_validar_letras">• Letras maiúsculas e minúsculas</label>
+            <label id="label_validar_numeros">• Ao menos 1 número</label>
+            <label id="label_validar_simbolos">• Ao menos 1 símbolo (!@#$%&*_-./)</label>
+            <label id="label_validar_tamanho">• De 8 a 20 caracteres</label>
+        </div>
+
+        <!-- Confirmar senha -->
+        <div class="campo">
+            <label for="confirmar_senha_input">Confirme a senha</label>
+            <input disabled onblur="validarConfirmacao()" id="confirmar_senha_input" type="password">
+            <label id="label_validar_cfmSenha" class="msg-erro"></label>
+        </div>
+
+        <!-- Email -->
+        <div class="campo">
+            <label for="email_input">Email</label>
+            <input onblur="validarEmail()" id="email_input" type="text">
+            <label id="label_validar_email" class="msg-erro"></label>
+        </div>
+
+        <!-- Botão -->
+        <div class="botao">
+            <button onclick="cadastrar()" type="button">CADASTRAR</button>
+        </div>
+
+        <label id="label_verificar_campos" class="msg-erro"></label>
+
+        <p class="rodape-form">
+            Já tem conta?
+            <span class="link-acao" onclick="window.location.href='login.html'">Fazer login</span>
+        </p>
+    </div>
+</div>
+
+<script>
+    // ----- Referências -----
+    var username_input          = document.getElementById("username_input");
+    var senha_input             = document.getElementById("senha_input");
+    var confirmar_senha_input   = document.getElementById("confirmar_senha_input");
+    var email_input             = document.getElementById("email_input");
+
+    var label_validar_username  = document.getElementById("label_validar_username");
+    var label_validar_letras    = document.getElementById("label_validar_letras");
+    var label_validar_numeros   = document.getElementById("label_validar_numeros");
+    var label_validar_simbolos  = document.getElementById("label_validar_simbolos");
+    var label_validar_tamanho   = document.getElementById("label_validar_tamanho");
+    var label_validar_cfmSenha  = document.getElementById("label_validar_cfmSenha");
+    var label_validar_email     = document.getElementById("label_validar_email");
+    var label_verificar_campos  = document.getElementById("label_verificar_campos");
+
+    // ----- Estado -----
+    var usernameInvalido = true;
+    var emailInvalido    = true;
+    var senhaInvalida    = true;
+    var cfmSenhaInvalido = true;
+
+    var senha = "";
+    var numerosPermitidos = "0123456789";
+
+    // ----- Validações -----
+
+    function validarUsername() {
+        var username = username_input.value.trim();
+
+        // CORRIGIDO: era "username.lenght" no original (typo)
+        if (username.length < 3) {
+            usernameInvalido = true;
+        } else {
+            usernameInvalido = false;
+        }
+
+        label_validar_username.innerHTML = usernameInvalido
+            ? "Digite um username válido (mínimo 3 caracteres)."
+            : "";
+    }
+
+    function validarSenha() {
+        senha = senha_input.value.trim();
+        senhaInvalida = true;
+
+        var temMaius = false;
+        var temMinus = false;
+        var temNum   = false;
+        var temSimb  = false;
+        var simbolos = "!@#$%&*_-./";
+
+        for (var i = 0; i < senha.length; i++) {
+            var char = senha[i];
+            if (char >= "A" && char <= "Z") temMaius = true;
+            if (char >= "a" && char <= "z") temMinus = true;
+            if (numerosPermitidos.includes(char)) temNum = true;
+            if (simbolos.includes(char)) temSimb = true;
+        }
+
+        label_validar_letras.style.color  = (temMaius && temMinus) ? "#2a7d3f" : "#888888";
+        label_validar_numeros.style.color = temNum  ? "#2a7d3f" : "#888888";
+        label_validar_simbolos.style.color= temSimb ? "#2a7d3f" : "#888888";
+        label_validar_tamanho.style.color = (senha.length >= 8 && senha.length <= 20) ? "#2a7d3f" : "#888888";
+
+        if (temMaius && temMinus && temNum && temSimb && senha.length >= 8 && senha.length <= 20) {
+            senhaInvalida = false;
+            confirmar_senha_input.disabled = false;
+        } else {
+            confirmar_senha_input.disabled = true;
+        }
+    }
+
+    function validarConfirmacao() {
+        var cfm = confirmar_senha_input.value.trim();
+        if (cfm === senha) {
+            cfmSenhaInvalido = false;
+            label_validar_cfmSenha.innerHTML = "";
+        } else {
+            cfmSenhaInvalido = true;
+            label_validar_cfmSenha.innerHTML = "Senhas diferentes.";
+        }
+    }
+
+    function validarEmail() {
+        var email = email_input.value.trim();
+        emailInvalido = true;
+
+        if (!email.includes(" ") && (
+            email.endsWith("@gmail.com")     ||
+            email.endsWith("@hotmail.com")   ||
+            email.endsWith("@outlook.com")   ||
+            email.endsWith("@sptech.school")
+        )) {
+            emailInvalido = false;
+        }
+
+        label_validar_email.innerHTML = emailInvalido
+            ? "Digite um email válido."
+            : "";
+    }
+</script>
+
+</body>
+</html>

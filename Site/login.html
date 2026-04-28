@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
     <title>Login</title>
 </head>
+
 <body>
-
-<div class="signup-wrapper">
-    <div class="formulario glass-card">
-        <h1>Entrar</h1>
-
-        <div class="campo">
-            <label for="email_input_login">Email</label>
-            <input type="email" id="email_input_login" required>
+    <nav>
+        <div class="img-nav">
+            <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png" alt="logo-nike">
+            <img style="display: none; width: 70px;" src="assets/icon-closet.webp" alt="icon-closet">
         </div>
+        <h2 style="margin-right: 100px; cursor: pointer;" onclick="window.location.href='login.html'">Login</h2>
+    </nav>
+    <div class="signup-wrapper">
+        <div class="formulario glass-card">
+            <h1>Entrar</h1>
 
-        <div class="campo">
-            <label for="senha_input_login">Senha</label>
-            <input type="password" id="senha_input_login" required>
+            <div class="campo">
+                <label for="email_input_login">Email</label>
+                <input type="email" id="email_input_login" required>
+            </div>
+
+            <div class="campo">
+                <label for="senha_input_login">Senha</label>
+                <input type="password" id="senha_input_login" required>
+            </div>
+
+            <div class="botao">
+                <button type="button" onclick="entrar()">Entrar</button>
+            </div>
+
+            <span id="verificar_login" class="msg-erro"></span>
+
+            <p class="rodape-form">
+                Não tem conta?
+                <span class="link-acao" onclick="window.location.href='cadastro.html'">Criar conta</span>
+            </p>
         </div>
-
-        <div class="botao">
-            <button type="button" onclick="entrar()">Entrar</button>
-        </div>
-
-        <span id="verificar_login" class="msg-erro"></span>
-
-        <p class="rodape-form">
-            Não tem conta?
-            <span class="link-acao" onclick="window.location.href='cadastro.html'">Criar conta</span>
-        </p>
     </div>
-</div>
 
-<script>
-</script>
+    <script>
+    </script>
 
 </body>
+
 </html>

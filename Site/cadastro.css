@@ -1,142 +1,154 @@
- :root {
-            --bg: #F2F2F2;
-            --surface: #FFFFFF;
-            --border: #E0E0E0;
-            --accent: #111111;
-            --text: #111111;
-            --muted: #888888;
-            --ok: #2a7d3f;
-            --erro: #cc3333;
-        }
+:root {
+        --bg: #c2c2c2;
+        --box: #FFFFFF;
+        --border: #201212;
+        --button: #111111;
+        --text: #111111;
+        --label: #616060;
+        --ok: #008622;
+        --erro: #ff2828;
+    }
+    
+nav{
+height: 90px; width: 100%; background-color: rgb(255, 255, 255);
+        box-shadow: 0px 6px 2px -2px rgb(217, 216, 216);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+.img-nav{
+    width: 300px; display: flex; align-items: center; justify-content: space-evenly;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: sans-serif;
+    /* min-height: 100vh; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+}
 
-        .signup-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 40px 16px;
-        }
+.signup-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
 
-        .formulario.glass-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            width: 100%;
-            max-width: 420px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        }
+.formulario.glass-card {
+    background: var(--box);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
 
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text);
-        }
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+}
 
-        .campo {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
-        .campo label {
-            font-size: 13px;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+.campo label {
+    font-size: 13px;
+    color: var(--label);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
-        .campo input {
-            background: #FAFAFA;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 14px;
-            color: var(--text);
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
+.campo input {
+    background: #FAFAFA;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
 
-        .campo input:focus {
-            border-color: var(--accent);
-        }
+.campo input:focus {
+    border-color: var(--button);
+}
 
-        .campo input:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
+.campo input:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 
-        .msg-erro {
-            color: var(--erro);
-            font-size: 13px;
-            min-height: 18px;
-            display: block;
-        }
+.msg-erro {
+    color: var(--erro);
+    font-size: 13px;
+    min-height: 18px;
+    display: block;
+}
 
-        .validacao-senha-mensagem {
-            background: #FAFAFA;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px 16px;
-            font-size: 13px;
-            line-height: 1.8;
-        }
+.validacao-senha-mensagem {
+    background: #9b9b9b;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.8;
+}
 
-        .validacao-senha-mensagem label {
-            color: var(--muted);
-            display: block;
-            transition: color 0.2s;
-        }
+.validacao-senha-mensagem label {
+    color: #FFFFFF;
+    display: block;
+    transition: color 0.2s;
+}
 
-        #inicio_requisitos {
-            color: var(--text);
-            font-weight: 600;
-        }
+#inicio_requisitos {
+    color: var(--text);
+    font-weight: 600;
+}
 
-        .botao button {
-            width: 100%;
-            background: var(--accent);
-            color: #FFFFFF;
-            border: none;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            letter-spacing: 0.05em;
-            transition: opacity 0.2s;
-        }
+.botao button {
+    width: 100%;
+    background: var(--button);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
+}
 
-        .botao button:hover {
-            opacity: 0.8;
-        }
+.botao button:hover {
+    opacity: 0.8;
+}
 
-        .rodape-form {
-            font-size: 13px;
-            color: var(--muted);
-        }
+.rodape-form {
+    font-size: 13px;
+    color: var(--label);
+}
 
-        .link-acao {
-            color: var(--accent);
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: underline;
-        }
+.link-acao {
+    color: var(--button);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+}

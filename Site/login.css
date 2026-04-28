@@ -1,13 +1,24 @@
 :root {
             --bg: #F2F2F2;
-            --surface: #FFFFFF;
+            --box: #FFFFFF;
             --border: #E0E0E0;
-            --accent: #111111;
+            --button: #111111;
             --text: #111111;
-            --muted: #888888;
+            --label: #888888;
             --erro: #cc3333;
         }
 
+nav{
+    height: 90px; width: 100%; background-color: rgb(255, 255, 255);
+            box-shadow: 0px 6px 2px -2px rgb(217, 216, 216);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+}
+.img-nav{
+    width: 300px; display: flex; align-items: center; justify-content: space-evenly;
+}
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,10 +29,11 @@
             background-color: var(--bg);
             color: var(--text);
             font-family: sans-serif;
-            min-height: 100vh;
             display: flex;
-            align-items: center;
+            /* align-items: center; */
             justify-content: center;
+            flex-direction: column;
+            gap: 170px;
         }
 
         .signup-wrapper {
@@ -32,7 +44,7 @@
         }
 
         .formulario.glass-card {
-            background: var(--surface);
+            background: var(--box);
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 40px;
@@ -58,7 +70,7 @@
 
         .campo label {
             font-size: 13px;
-            color: var(--muted);
+            color: var(--label);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -75,12 +87,12 @@
         }
 
         .campo input:focus {
-            border-color: var(--accent);
+            border-color: var(--button);
         }
 
         .botao button {
             width: 100%;
-            background: var(--accent);
+            background: var(--button);
             color: #FFFFFF;
             border: none;
             border-radius: 8px;
@@ -104,7 +116,7 @@
         }
 
         .link-acao {
-            color: var(--accent);
+            color: var(--button);
             cursor: pointer;
             font-weight: 600;
             text-decoration: underline;
@@ -112,5 +124,5 @@
 
         .rodape-form {
             font-size: 13px;
-            color: var(--muted);
+            color: var(--label);
         }

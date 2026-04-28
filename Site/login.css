@@ -1,128 +1,135 @@
 :root {
-            --bg: #F2F2F2;
-            --box: #FFFFFF;
-            --border: #E0E0E0;
-            --button: #111111;
-            --text: #111111;
-            --label: #888888;
-            --erro: #cc3333;
-        }
-
-nav{
-    height: 90px; width: 100%; background-color: rgb(255, 255, 255);
-            box-shadow: 0px 6px 2px -2px rgb(217, 216, 216);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-    
+    --bg: #F2F2F2;
+    --box: #FFFFFF;
+    --border: #E0E0E0;
+    --button: #111111;
+    --text: #111111;
+    --label: #888888;
+    --erro: #cc3333;
 }
-.img-nav{
-    width: 300px; display: flex; align-items: center; justify-content: space-evenly;
+
+nav {
+    height: 90px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 2px -2px rgb(217, 216, 216);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: sans-serif;
-            display: flex;
-            /* align-items: center; */
-            justify-content: center;
-            flex-direction: column;
-            gap: 170px;
-        }
+.img-nav {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-        .signup-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 40px 16px;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .formulario.glass-card {
-            background: var(--box);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            width: 100%;
-            max-width: 420px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        }
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: sans-serif;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    gap: 170px;
+}
 
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text);
-        }
+.signup-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
 
-        .campo {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+.formulario.glass-card {
+    background: var(--box);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
 
-        .campo label {
-            font-size: 13px;
-            color: var(--label);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+}
 
-        .campo input {
-            background: #FAFAFA;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 14px;
-            color: var(--text);
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
-        .campo input:focus {
-            border-color: var(--button);
-        }
+.campo label {
+    font-size: 13px;
+    color: var(--label);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
-        .botao button {
-            width: 100%;
-            background: var(--button);
-            color: #FFFFFF;
-            border: none;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            letter-spacing: 0.05em;
-            transition: opacity 0.2s;
-        }
+.campo input {
+    background: #FAFAFA;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
 
-        .botao button:hover {
-            opacity: 0.8;
-        }
+.campo input:focus {
+    border-color: var(--button);
+}
 
-        .msg-erro {
-            color: var(--erro);
-            font-size: 13px;
-            min-height: 18px;
-            display: block;
-        }
+.botao button {
+    width: 100%;
+    background: var(--button);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
+}
 
-        .link-acao {
-            color: var(--button);
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: underline;
-        }
+.botao button:hover {
+    opacity: 0.8;
+}
 
-        .rodape-form {
-            font-size: 13px;
-            color: var(--label);
-        }
+.msg-erro {
+    color: var(--erro);
+    font-size: 13px;
+    min-height: 18px;
+    display: block;
+}
+
+.link-acao {
+    color: var(--button);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.rodape-form {
+    font-size: 13px;
+    color: var(--label);
+}

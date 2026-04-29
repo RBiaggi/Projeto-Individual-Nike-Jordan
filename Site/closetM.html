@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="closetM.css">
+    <link rel="stylesheet" href="closet.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap">
@@ -18,7 +18,7 @@
     <h2 style="margin-right: 100px; cursor: pointer;" onclick="window.location.href='login.html'">Login</h2>
     </nav>
     <div style="display: flex;">
-        <button id="botao_voltar" onclick="window.location.href='closet.html'">↩</button>
+        <button id="botao_voltar" onclick="window.location.href='escolhaGenero.html'">↩</button>
         <p id="titulo">DEFINA SEU LOOK</p>
     </div>
     <div class="display">
@@ -33,6 +33,7 @@
                         <img src="assets/look-masculino/cabeca/oculos.jpg" alt="Foto 2">
                         <img src="assets/look-masculino/cabeca/touca.webp" alt="Foto 3">
                         <img src="assets/look-masculino/cabeca/bone.avif" alt="Foto 4">
+                        <img style="padding: 20px;" src="assets/look-masculino/cabeca/nenhum.png" alt="Foto 5">
                     </div>
                 </div>
                 
@@ -106,7 +107,7 @@
     let posicao4 = 0;
     
     function avancar1() {
-        if(posicao1 > -900){
+        if(posicao1 > -1200){
             posicao1 = posicao1 - 300;
             faixa1.style.transform = `translateX(${posicao1}px)`;
         }

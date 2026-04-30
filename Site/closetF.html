@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,103 +9,108 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <div id="coluna" class="coluna">
-    <div class="frame">
+        <div class="frame">
             <nav>
                 <div class="img-nav">
-            <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png" alt="logo-nike">
-            <img style="display: inline; width: 70px;" src="assets/icon-closet.webp" alt="icon-closet" onclick="window.location.href='closet.html'">
-        </div>
-        <h2 style="margin-right: 100px; cursor: pointer;" onclick="window.location.href='login.html'">Login</h2>
-        </nav>
-        <div style="display: flex;">
-            <button id="botao_voltar" onclick="window.location.href='escolhaGenero.html'">↩</button>
-            <p id="titulo">DEFINA SEU LOOK</p>
-        </div>
-        <div class="display">
-            <div class="card">
-                <p>Cabeça</p>
-                <div class="carrossel">
-                    <button id="seta-esq" onclick="voltar1()">❮</button>
-                    
-                    <div class="janela">
-                        <div class="faixa" id="faixa1">
-                            <img src="assets/look-feminino/cabeca/chapeu.jpg" alt="Foto 1">
-                            <img src="assets/look-feminino/cabeca/oculos.jpg" alt="Foto 2">
-                            <img src="assets/look-feminino/cabeca/touca.webp" alt="Foto 3">
-                            <img src="assets/look-feminino/cabeca/bone.avif" alt="Foto 4">
-                            <img style="padding: 20px;" src="assets/look-feminino/cabeca/nenhum.png" alt="Foto 5">
+                    <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png"
+                        alt="logo-nike">
+                    <img style="display: inline; width: 70px;" src="assets/icon-closet.webp" alt="icon-closet"
+                        onclick="window.location.href='closet.html'">
+                </div>
+                <h2 style="margin-right: 100px; cursor: pointer;" onclick="window.location.href='login.html'">Login</h2>
+            </nav>
+            <div style="display: flex;">
+                <button id="botao_voltar" onclick="window.location.href='escolhaGenero.html'">↩</button>
+                <p id="titulo">DEFINA SEU LOOK</p>
+            </div>
+            <div class="display">
+                <div class="card">
+                    <p>Cabeça</p>
+                    <div class="carrossel">
+                        <button id="seta-esq" onclick="voltar1()">❮</button>
+
+                        <div class="janela">
+                            <div class="faixa" id="faixa1">
+                                <img src="assets/look-feminino/cabeca/chapeu.jpg" alt="Foto 1">
+                                <img src="assets/look-feminino/cabeca/oculos.jpg" alt="Foto 2">
+                                <img src="assets/look-feminino/cabeca/touca.webp" alt="Foto 3">
+                                <img src="assets/look-feminino/cabeca/bone.avif" alt="Foto 4">
+                                <img style="padding: 20px;" src="assets/look-feminino/cabeca/nenhum.png" alt="Foto 5">
+                            </div>
                         </div>
+
+                        <button id="seta-dir" onclick="avancar1()">❯</button>
                     </div>
-                    
-                    <button id="seta-dir" onclick="avancar1()">❯</button>
+                </div>
+                <div class="card">
+                    <p>Tronco</p>
+                    <div class="carrossel">
+                        <button id="seta-esq" onclick="voltar2()">❮</button>
+
+                        <div class="janela">
+                            <div class="faixa" id="faixa2">
+                                <img src="assets/look-feminino/tronco/camisaP.webp" alt="Foto 1">
+                                <img src="assets/look-feminino/tronco/cropedB.jpg" alt="Foto 2">
+                                <img src="assets/look-feminino/tronco/moletom.webp" alt="Foto 3">
+                                <img src="assets/look-feminino/tronco/nike-pro.webp" alt="Foto 4">
+                                <img src="assets/look-feminino/tronco/cropedP.avif" alt="Foto 6">
+                            </div>
+                        </div>
+
+                        <button id="seta-dir" onclick="avancar2()">❯</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>Pernas</p>
+                    <div class="carrossel">
+                        <button id="seta-esq" onclick="voltar3()">❮</button>
+
+                        <div class="janela">
+                            <div class="faixa" id="faixa3">
+                                <img src="assets/look-feminino/pernas/calça-moletom.png" alt="Foto 1">
+                                <img src="assets/look-feminino/pernas/shorts-cargo.jpg" alt="Foto 2">
+                                <img src="assets/look-feminino/pernas/shortsP.webp" alt="Foto 3">
+                                <img src="assets/look-feminino/pernas/nike-pro" alt="Foto 4">
+                                <img src="assets/look-feminino/pernas/nike-pro-calça" alt="Foto 5">
+                            </div>
+                        </div>
+
+                        <button id="seta-dir" onclick="avancar3()">❯</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>Pés</p>
+                    <div class="carrossel">
+                        <button id="seta-esq" onclick="voltar4()">❮</button>
+
+                        <div class="janela">
+                            <div class="faixa" id="faixa4">
+                                <img src="assets/look-feminino/pes/jordan1.webp" alt="Foto 1">
+                                <img src="assets/look-feminino/pes/max-aura.jpg" alt="Foto 2">
+                                <img src="assets/look-feminino/pes/air-max-90.webp" alt="Foto 3">
+                                <img src="assets/look-feminino/pes/chinelo.webp" alt="Foto 4">
+                                <img src="assets/look-feminino/pes/jordan-courtside.webp" alt="Foto 5">
+                                <img src="assets/look-feminino/pes/af1.avif" alt="Foto 6">
+                            </div>
+                        </div>
+
+                        <button id="seta-dir" onclick="avancar4()">❯</button>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <p>Tronco</p>
-                <div class="carrossel">
-                    <button id="seta-esq" onclick="voltar2()">❮</button>
-                    
-                    <div class="janela">
-                        <div class="faixa" id="faixa2">
-                            <img src="assets/look-feminino/tronco/camisaP.webp" alt="Foto 1">
-                            <img src="assets/look-feminino/tronco/cropedB.jpg" alt="Foto 2">
-                            <img src="assets/look-feminino/tronco/moletom.webp" alt="Foto 3">
-                            <img src="assets/look-feminino/tronco/nike-pro.webp" alt="Foto 4">
-                            <img src="assets/look-feminino/tronco/cropedP.avif" alt="Foto 6">
-                        </div>
-                    </div>
-                    
-                    <button id="seta-dir" onclick="avancar2()">❯</button>
-                </div>
-            </div>
-            <div class="card">
-                <p>Pernas</p>
-                <div class="carrossel">
-                    <button id="seta-esq" onclick="voltar3()">❮</button>
-                    
-                    <div class="janela">
-                        <div class="faixa" id="faixa3">
-                            <img src="assets/look-feminino/pernas/calça-moletom.png" alt="Foto 1">
-                            <img src="assets/look-feminino/pernas/shorts-cargo.jpg" alt="Foto 2">
-                            <img src="assets/look-feminino/pernas/shortsP.webp" alt="Foto 3">
-                            <img src="assets/look-feminino/pernas/nike-pro" alt="Foto 4">
-                            <img src="assets/look-feminino/pernas/nike-pro-calça" alt="Foto 5">
-                        </div>
-                    </div>
-                    
-                    <button id="seta-dir" onclick="avancar3()">❯</button>
-                </div>
-            </div>
-            <div class="card">
-                <p>Pés</p>
-                <div class="carrossel">
-                    <button id="seta-esq" onclick="voltar4()">❮</button>
-                    
-                    <div class="janela">
-                        <div class="faixa" id="faixa4">
-                            <img src="assets/look-feminino/pes/jordan1.webp" alt="Foto 1">
-                            <img src="assets/look-feminino/pes/max-aura.jpg" alt="Foto 2">
-                            <img src="assets/look-feminino/pes/air-max-90.webp" alt="Foto 3">
-                            <img src="assets/look-feminino/pes/chinelo.webp" alt="Foto 4">
-                            <img src="assets/look-feminino/pes/jordan-courtside.webp" alt="Foto 5">
-                            <img src="assets/look-feminino/pes/af1.avif" alt="Foto 6">
-                        </div>
-                    </div>
-                    
-                    <button id="seta-dir" onclick="avancar4()">❯</button>
-                </div>
-            </div>
-        </div>
-        <button id="concluir" onclick="concluir()">Concluir</button>
+            <button id="concluir" onclick="concluir()">Concluir</button>
         </div>
         <div class="dashboard">
             <button onclick="voltarCloset()">⬆</button>
         </div>
     </div>
 </body>
+
 </html>
 <script>
     let posicao1 = 0;
@@ -112,9 +118,9 @@
     let posicao3 = 0;
     let posicao4 = 0;
     let posicaoTela = 0;
-    
+
     function avancar1() {
-        if(posicao1 > -1200){
+        if (posicao1 > -1200) {
             posicao1 = posicao1 - 300;
             faixa1.style.transform = `translateX(${posicao1}px)`;
         }
@@ -122,13 +128,13 @@
 
     function voltar1() {
         if (posicao1 < 0) {
-        posicao1 = posicao1 + 300;
-        faixa1.style.transform = `translateX(${posicao1}px)`;
+            posicao1 = posicao1 + 300;
+            faixa1.style.transform = `translateX(${posicao1}px)`;
         }
     }
 
     function avancar2() {
-        if(posicao2 > -1200){
+        if (posicao2 > -1200) {
             posicao2 = posicao2 - 300;
             faixa2.style.transform = `translateX(${posicao2}px)`;
         }
@@ -136,13 +142,13 @@
 
     function voltar2() {
         if (posicao2 < 0) {
-        posicao2 = posicao2 + 300;
-        faixa2.style.transform = `translateX(${posicao2}px)`;
+            posicao2 = posicao2 + 300;
+            faixa2.style.transform = `translateX(${posicao2}px)`;
         }
     }
 
     function avancar3() {
-        if(posicao3 > -1200){
+        if (posicao3 > -1200) {
             posicao3 = posicao3 - 300;
             faixa3.style.transform = `translateX(${posicao3}px)`;
         }
@@ -150,13 +156,13 @@
 
     function voltar3() {
         if (posicao3 < 0) {
-        posicao3 = posicao3 + 300;
-        faixa3.style.transform = `translateX(${posicao3}px)`;
+            posicao3 = posicao3 + 300;
+            faixa3.style.transform = `translateX(${posicao3}px)`;
         }
     }
 
     function avancar4() {
-        if(posicao4 > -1500){
+        if (posicao4 > -1500) {
             posicao4 = posicao4 - 300;
             faixa4.style.transform = `translateX(${posicao4}px)`;
         }
@@ -164,17 +170,17 @@
 
     function voltar4() {
         if (posicao4 < 0) {
-        posicao4 = posicao4 + 300;
-        faixa4.style.transform = `translateX(${posicao4}px)`;
+            posicao4 = posicao4 + 300;
+            faixa4.style.transform = `translateX(${posicao4}px)`;
         }
     }
 
-    function concluir(){
+    function concluir() {
         coluna.style.transform = `translatey(${-100}vh)`;
     }
 
 
-    function voltarCloset(){
+    function voltarCloset() {
         coluna.style.transform = `translatey(${0}vh)`;
     }
 

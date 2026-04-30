@@ -141,7 +141,7 @@ nav {
     height: 100vh;
 }
 
-.dashboard{
+.display2{
     width: 100vw;
     height: 100vh;
     background-color: white;
@@ -156,7 +156,7 @@ nav {
     transition: 1s;
 }
 
-.dashboard button{
+.display2 button{
     background: black;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;

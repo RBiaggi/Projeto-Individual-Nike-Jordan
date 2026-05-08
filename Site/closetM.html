@@ -120,8 +120,8 @@
                                 <div class="kpi" id="kpi2"></div>
                                 <div class="kpi" id="kpi3"></div>
                             </div>
-                            <canvas>
-
+                            <canvas id="grafico-rosca">
+                                
                             </canvas>
                         </div>
                     </div>
@@ -136,6 +136,12 @@
     let posicao2 = 0;
     let posicao3 = 0;
     let posicao4 = 0;
+
+    let streetware = 0;
+    let casual = 0;
+    let social = 0;
+    let esportivo = 0;
+
 
     function avancar1() {
         if (posicao1 > -1200) {
@@ -194,7 +200,139 @@
     }
 
     function concluir() {
+
+        streetware = 0;
+        casual = 0;
+        social = 0;
+        esportivo = 0;
+
         coluna.style.transform = `translatey(${-100}vh)`;
+
+
+        if(posicao1 == 0){
+            streetware += 50
+            casual += 30
+            social += 5
+            esportivo += 15  
+        } else if(posicao1 == -300){
+            streetware += 10
+            casual += 20
+            social += 10
+            esportivo += 60 
+        } else if (posicao1 == -600){
+            streetware += 60
+            casual += 20
+            social += 5
+            esportivo += 15 
+        } else if (posicao1 == -900){
+            streetware += 40
+            casual += 30
+            social += 10
+            esportivo += 20 
+        }
+
+        if(posicao2 == 0){
+            streetware += 50
+            casual += 30
+            social += 10
+            esportivo += 10  
+        } else if(posicao2 == -300){
+            streetware += 40
+            casual += 20
+            social += 10
+            esportivo += 30 
+        } else if (posicao2 == -600){
+            streetware += 35
+            casual += 40
+            social += 15
+            esportivo += 10 
+        } else if (posicao2 == -900){
+            streetware += 35
+            casual += 35
+            social += 10
+            esportivo += 20 
+        } else if (posicao2 == -1200){
+            streetware += 10
+            casual += 10
+            social += 0
+            esportivo += 80 
+        } else if (posicao2 == -1500){
+            streetware += 60
+            casual += 15
+            social += 5
+            esportivo += 20 
+        }
+        
+        if(posicao3 == 0){
+            streetware += 30
+            casual += 40
+            social += 10
+            esportivo += 20  
+        } else if(posicao3 == -300){
+            streetware += 50
+            casual += 15
+            social += 5
+            esportivo += 30 
+        } else if (posicao3 == -600){
+            streetware += 20
+            casual += 50
+            social += 20
+            esportivo += 10 
+        } else if (posicao3 == -900){
+            streetware += 40
+            casual += 20
+            social += 5
+            esportivo += 35
+        } else if (posicao3 == -1200){
+            streetware += 45
+            casual += 25
+            social += 5
+            esportivo += 25 
+        }
+
+        if(posicao4 == 0){
+            streetware += 60
+            casual += 20
+            social += 15
+            esportivo += 5  
+        } else if(posicao4 == -300){
+            streetware += 55
+            casual += 20
+            social += 10
+            esportivo += 15 
+        } else if (posicao4 == -600){
+            streetware += 60
+            casual += 15
+            social += 10
+            esportivo += 15 
+        } else if (posicao4 == -900){
+            streetware += 40
+            casual += 25
+            social += 10
+            esportivo += 25 
+        } else if (posicao4 == -1200){
+            streetware += 10
+            casual += 50
+            social += 5
+            esportivo += 35 
+        } else if (posicao4 == -1500){
+            streetware += 50
+            casual += 20
+            social += 5
+            esportivo += 25
+        }
+
+        const ctx = document.getElementById('grafico-rosca');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+            labels: ['StreetWare', 'Casual', 'Social', 'Esportivo'],
+            datasets: [{
+            data: [streetware, casual, social, esportivo],
+            backgroundColor: ['#1a1a1a', '#555', '#888', '#bbb']        }]
+    }
+});
     }
 
 

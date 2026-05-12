@@ -33,10 +33,10 @@
                         <button onclick="voltar1()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa1">
+                                <img src="assets/look-masculino/cabeca/bone.webp" alt="Foto 4">
                                 <img src="assets/look-masculino/cabeca/chapeu.jpg" alt="Foto 1">
-                                <img src="assets/look-masculino/cabeca/oculos.jpg" alt="Foto 2">
-                                <img src="assets/look-masculino/cabeca/touca.webp" alt="Foto 3">
-                                <img src="assets/look-masculino/cabeca/bone.avif" alt="Foto 4">
+                                <img src="assets/look-masculino/cabeca/faixa.jpg" alt="Foto 2">
+                                <img src="assets/look-masculino/cabeca/touca.jpg" alt="Foto 3">
                                 <img style="padding: 20px;" src="assets/look-masculino/cabeca/nenhum.png" alt="Foto 5">
                             </div>
                         </div>
@@ -49,11 +49,11 @@
                         <button onclick="voltar2()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa2">
-                                <img src="assets/look-masculino/tronco/camisaP.webp" alt="Foto 1">
-                                <img src="assets/look-masculino/tronco/bobojaco.webp" alt="Foto 2">
+                                <img src="assets/look-masculino/tronco/camisaP.jpg" alt="Foto 1">
+                                <img src="assets/look-masculino/tronco/blusa.webp" alt="Foto 2">
                                 <img src="assets/look-masculino/tronco/camisaB.jpg" alt="Foto 3">
-                                <img src="assets/look-masculino/tronco/camisaV.jpg" alt="Foto 4">
-                                <img src="assets/look-masculino/tronco/nike-pro.webp" alt="Foto 5">
+                                <img src="assets/look-masculino/tronco/dri-fit.avif" alt="Foto 4">
+                                <img src="assets/look-masculino/tronco/compress.jpg" alt="Foto 5">
                                 <img src="assets/look-masculino/tronco/jersey.jpg" alt="Foto 6">
                             </div>
                         </div>
@@ -66,11 +66,11 @@
                         <button onclick="voltar3()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa3">
-                                <img src="assets/look-masculino/pernas/calçaP.jpg" alt="Foto 1">
-                                <img src="assets/look-masculino/pernas/calçaV.webp" alt="Foto 2">
-                                <img src="assets/look-masculino/pernas/jeans.webp" alt="Foto 3">
-                                <img src="assets/look-masculino/pernas/shortsB.webp" alt="Foto 4">
-                                <img src="assets/look-masculino/pernas/shortsP.jpg" alt="Foto 5">
+                                <img src="assets/look-masculino/pernas/essentials.jpg" alt="Foto 1">
+                                <img src="assets/look-masculino/pernas/oversize.avif" alt="Foto 2">
+                                <img src="assets/look-masculino/pernas/woven.avif" alt="Foto 3">
+                                <img src="assets/look-masculino/pernas/diamond.jpg" alt="Foto 4">
+                                <img src="assets/look-masculino/pernas/shorts.webp" alt="Foto 5">
                             </div>
                         </div>
                         <button onclick="avancar3()">❯</button>
@@ -82,10 +82,10 @@
                         <button onclick="voltar4()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa4">
-                                <img id="tenis_grande" src="assets/look-masculino/pes/jordan1.webp" alt="Foto 1">
-                                <img src="assets/look-masculino/pes/jordan13.webp" alt="Foto 2">
-                                <img src="assets/look-masculino/pes/jordan4.jpg" alt="Foto 3">
-                                <img src="assets/look-masculino/pes/max-aura.webp" alt="Foto 4">
+                                <img src="assets/look-masculino/pes/aj1.jpg" alt="Foto 1">
+                                <img src="assets/look-masculino/pes/aj13.webp" alt="Foto 2">
+                                <img src="assets/look-masculino/pes/aj4.jpg" alt="Foto 3">
+                                <img src="assets/look-masculino/pes/aj11.webp" alt="Foto 4">
                                 <img src="assets/look-masculino/pes/slide.avif" alt="Foto 5">
                                 <img src="assets/look-masculino/pes/tn.avif" alt="Foto 6">
                             </div>
@@ -213,71 +213,84 @@
         coluna.style.transform = `translatey(${-100}vh)`;
 
         if(posicao1 == 0){
-            streetware += 50; casual += 30; social += 5; esportivo += 15;
+            streetware += 40; casual += 35; social += 15; esportivo += 10;
         } else if(posicao1 == -300){
-            streetware += 10; casual += 20; social += 10; esportivo += 60;
+            streetware += 55; casual += 25; social += 5; esportivo += 15;
         } else if (posicao1 == -600){
-            streetware += 60; casual += 20; social += 5; esportivo += 15;
+            streetware += 10; casual += 10; social += 0; esportivo += 80;
         } else if (posicao1 == -900){
-            streetware += 40; casual += 30; social += 10; esportivo += 20;
+            streetware += 50; casual += 30; social += 5; esportivo += 15;
         }
 
         if(posicao2 == 0){
-            streetware += 50; casual += 30; social += 10; esportivo += 10;
+            streetware += 65; casual += 15; social += 15; esportivo += 5;
         } else if(posicao2 == -300){
-            streetware += 40; casual += 20; social += 10; esportivo += 30;
+            streetware += 30; casual += 45; social += 20; esportivo += 5;
         } else if (posicao2 == -600){
-            streetware += 35; casual += 40; social += 15; esportivo += 10;
+            streetware += 5; casual += 5; social += 0; esportivo += 90;
         } else if (posicao2 == -900){
-            streetware += 35; casual += 35; social += 10; esportivo += 20;
+            streetware += 60; casual += 20; social += 5; esportivo += 15;
         } else if (posicao2 == -1200){
-            streetware += 10; casual += 10; social += 0; esportivo += 80;
+            streetware += 20; casual += 20; social += 5; esportivo += 55;
         } else if (posicao2 == -1500){
             streetware += 60; casual += 15; social += 5; esportivo += 20;
         }
 
         if(posicao3 == 0){
-            streetware += 30; casual += 40; social += 10; esportivo += 20;
+            streetware += 45; casual += 15; social += 0; esportivo += 40;
         } else if(posicao3 == -300){
-            streetware += 50; casual += 15; social += 5; esportivo += 30;
+            streetware += 35; casual += 45; social += 10; esportivo += 10;
         } else if (posicao3 == -600){
-            streetware += 20; casual += 50; social += 20; esportivo += 10;
+            streetware += 15; casual += 15; social += 0; esportivo += 70;
         } else if (posicao3 == -900){
-            streetware += 40; casual += 20; social += 5; esportivo += 35;
+            streetware += 65; casual += 20; social += 5; esportivo += 10;
         } else if (posicao3 == -1200){
-            streetware += 45; casual += 25; social += 5; esportivo += 25;
+            streetware += 55; casual += 25; social += 5; esportivo += 15;
+        } else if (posicao3 == -1500){
+            streetware += 30; casual += 35; social += 15; esportivo += 20;
         }
 
         if(posicao4 == 0){
-            streetware += 60; casual += 20; social += 15; esportivo += 5;
+            streetware += 65; casual += 15; social += 15; esportivo += 5;
         } else if(posicao4 == -300){
-            streetware += 55; casual += 20; social += 10; esportivo += 15;
+            streetware += 50; casual += 20; social += 25; esportivo += 5;
         } else if (posicao4 == -600){
-            streetware += 60; casual += 15; social += 10; esportivo += 15;
+            streetware += 60; casual += 20; social += 10; esportivo += 10;
         } else if (posicao4 == -900){
-            streetware += 40; casual += 25; social += 10; esportivo += 25;
-        } else if (posicao4 == -1200){
             streetware += 10; casual += 50; social += 5; esportivo += 35;
-        } else if (posicao4 == -1500){
+        } else if (posicao4 == -1200){
             streetware += 50; casual += 20; social += 5; esportivo += 25;
+        } else if (posicao4 == -1500){
+            streetware += 70; casual += 15; social += 10; esportivo += 5;
         }
 
+        let totalPontos = streetware + casual + social + esportivo;
         let estiloVencedor = '';
         let textoDashboard = '';
+        let pontuacaoVencedor = 0;
+        let nota = 0
 
         if (streetware >= casual && streetware >= social && streetware >= esportivo) {
             estiloVencedor = 'StreetWare';
             textoDashboard = 'Seu estilo é urbano e autêntico. Você se inspira na cultura das ruas, no skate e no basquete. Confiante e despojado, você usa a moda como forma de expressão.';
+            pontuacaoVencedor = streetware
         } else if (casual >= streetware && casual >= social && casual >= esportivo) {
             estiloVencedor = 'Casual';
             textoDashboard = 'Seu estilo é confortável e versátil. Você prioriza praticidade sem abrir mão do visual. Equilibrado e acessível, seu look funciona em qualquer situação.';
+            pontuacaoVencedor = casual
         } else if (social >= casual && social >= streetware && social >= esportivo) {
             estiloVencedor = 'Social';
             textoDashboard = 'Seu estilo é refinado e elegante. Você se preocupa com a impressão que causa e se veste para ocasiões. Cuidadoso e sofisticado, cada detalhe importa.';
+            pontuacaoVencedor = social
         } else if (esportivo >= casual && esportivo >= social && esportivo >= streetware) {
             estiloVencedor = 'Esportivo';
             textoDashboard = 'Seu estilo é dinâmico e funcional. Você vive em movimento e suas roupas acompanham seu ritmo. Focado e energético, performance e estilo andam juntos.';
+            pontuacaoVencedor = esportivo
         }
+
+        nota = ((pontuacaoVencedor / totalPontos) * 10).toFixed(1);
+
+        console.log(nota)
 
         titulo_dash.innerHTML = estiloVencedor;
         texto_dash.innerHTML = textoDashboard;

@@ -142,10 +142,16 @@
     let posicao3 = 0;
     let posicao4 = 0;
 
+    let tentativa = 0;
+    let notas = [];
+
     let streetware = 0;
     let casual = 0;
     let social = 0;
     let esportivo = 0;
+
+    let graficoLinha = null;
+    let graficoRosca = null;
 
     function avancar1() {
         if (posicao1 > -1200) {
@@ -288,21 +294,40 @@
             pontuacaoVencedor = esportivo
         }
 
+        
+
         nota = ((pontuacaoVencedor / totalPontos) * 10).toFixed(1);
 
-        console.log(nota)
+        notas.push(Number(nota));
+        if (notas.length > 5) {
+            notas.shift();
+        }
+
+        document.getElementById('kpi2-valor').textContent = nota;
+        document.getElementById('kpi1-valor').textContent = `#${++tentativa}`;
+
+        let labels = [];
+
+        for (let i = 1; i <= notas.length; i++) {
+            labels.push(`#${i}`);
+        }
 
         titulo_dash.innerHTML = estiloVencedor;
         texto_dash.innerHTML = textoDashboard;
 
-        const ctx2 = document.getElementById('grafico-linha');
-        new Chart(ctx2, {
+        if (graficoLinha) graficoLinha.destroy();
+        if (graficoRosca) graficoRosca.destroy();
+
+        let ctx2 = document.getElementById('grafico-linha');
+        let ctx = document.getElementById('grafico-rosca');
+
+        graficoLinha = new Chart(ctx2, {
             type: 'line',
             data: {
-                labels: ['#1', '#2', '#3', '#4', '#5'],
+                labels: labels,
                 datasets: [{
                     label: 'Nota por tentativa',
-                    data: [2, 5, 8, 10, 8.5],
+                    data: notas,
                     borderColor: '#C8102E',
                     backgroundColor: 'rgba(200, 16, 46, 0.1)',
                     fill: true,
@@ -310,12 +335,17 @@
                 }]
             },
             options: {
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 10
+                    }
+                }
             }
         });
 
-        const ctx = document.getElementById('grafico-rosca');
-        new Chart(ctx, {
+        graficoRosca = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: ['StreetWare', 'Casual', 'Social', 'Esportivo'],

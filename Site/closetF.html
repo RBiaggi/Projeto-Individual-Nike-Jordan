@@ -17,10 +17,8 @@
         <div class="frame">
             <nav>
                 <div class="img-nav">
-                    <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png"
-                        alt="logo-nike">
-                    <img style="display: inline; width: 70px;" src="assets/icon-closet.webp" alt="icon-closet"
-                        onclick="window.location.href='closet.html'">
+                    <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png" alt="logo-nike">
+                    <img style="display: inline; width: 70px;" src="assets/icon-closet.webp" alt="icon-closet" onclick="window.location.href='closet.html'">
                 </div>
                 <h2 style="margin-right: 100px; cursor: pointer;" onclick="window.location.href='login.html'">Login</h2>
             </nav>
@@ -32,8 +30,7 @@
                 <div class="card">
                     <p>Cabeça</p>
                     <div class="carrossel">
-                        <button id="seta-esq" onclick="voltar1()">❮</button>
-
+                        <button onclick="voltar1()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa1">
                                 <img src="assets/look-feminino/cabeca/chapeu.jpg" alt="Foto 1">
@@ -43,51 +40,45 @@
                                 <img style="padding: 20px;" src="assets/look-feminino/cabeca/nenhum.png" alt="Foto 5">
                             </div>
                         </div>
-
-                        <button id="seta-dir" onclick="avancar1()">❯</button>
+                        <button onclick="avancar1()">❯</button>
                     </div>
                 </div>
                 <div class="card">
                     <p>Tronco</p>
                     <div class="carrossel">
-                        <button id="seta-esq" onclick="voltar2()">❮</button>
-
+                        <button onclick="voltar2()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa2">
                                 <img src="assets/look-feminino/tronco/camisaP.webp" alt="Foto 1">
                                 <img src="assets/look-feminino/tronco/cropedB.jpg" alt="Foto 2">
                                 <img src="assets/look-feminino/tronco/moletom.webp" alt="Foto 3">
                                 <img src="assets/look-feminino/tronco/nike-pro.webp" alt="Foto 4">
-                                <img src="assets/look-feminino/tronco/cropedP.avif" alt="Foto 6">
+                                <img src="assets/look-feminino/tronco/cropedP.avif" alt="Foto 5">
                             </div>
                         </div>
-
-                        <button id="seta-dir" onclick="avancar2()">❯</button>
+                        <button onclick="avancar2()">❯</button>
                     </div>
                 </div>
                 <div class="card">
                     <p>Pernas</p>
                     <div class="carrossel">
-                        <button id="seta-esq" onclick="voltar3()">❮</button>
-
+                        <button onclick="voltar3()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa3">
                                 <img src="assets/look-feminino/pernas/calça-moletom.png" alt="Foto 1">
                                 <img src="assets/look-feminino/pernas/shorts-cargo.jpg" alt="Foto 2">
                                 <img src="assets/look-feminino/pernas/shortsP.webp" alt="Foto 3">
-                                <img src="assets/look-feminino/pernas/nike-pro" alt="Foto 4">
-                                <img src="assets/look-feminino/pernas/nike-pro-calça" alt="Foto 5">
+                                <img src="assets/look-feminino/pernas/nike-pro.jpg" alt="Foto 4">
+                                <img src="assets/look-feminino/pernas/nike-pro-calça.jpg" alt="Foto 5">
                             </div>
                         </div>
-
-                        <button id="seta-dir" onclick="avancar3()">❯</button>
+                        <button onclick="avancar3()">❯</button>
                     </div>
                 </div>
                 <div class="card">
                     <p>Pés</p>
                     <div class="carrossel">
-                        <button id="seta-esq" onclick="voltar4()">❮</button>
-
+                        <button onclick="voltar4()">❮</button>
                         <div class="janela">
                             <div class="faixa" id="faixa4">
                                 <img src="assets/look-feminino/pes/jordan1.webp" alt="Foto 1">
@@ -98,15 +89,47 @@
                                 <img src="assets/look-feminino/pes/af1.avif" alt="Foto 6">
                             </div>
                         </div>
-
-                        <button id="seta-dir" onclick="avancar4()">❯</button>
+                        <button onclick="avancar4()">❯</button>
                     </div>
                 </div>
             </div>
             <button id="concluir" onclick="concluir()">Concluir</button>
         </div>
-        <div class="dashboard">
-            <button onclick="voltarCloset()">⬆</button>
+        <div id="borda">
+            <div class="display2">
+                <button onclick="voltarCloset()">⬆</button>
+                <p id="titulo_geral">Suas Estatísticas</p>
+                <div class="dashboard">
+                    <div class="dash-texto">
+                        <p id="titulo_dash"></p>
+                        <p id="texto_dash"></p>
+                    </div>
+                    <div class="dash-chart">
+                        <div class="kpi-row">
+                            <div class="kpi" id="kpi1">
+                                <p class="kpi-titulo">TENTATIVA</p>
+                                <p class="kpi-valor" id="kpi1-valor">#1</p>
+                            </div>
+                            <div class="kpi" id="kpi2">
+                                <p class="kpi-titulo">NOTA</p>
+                                <p class="kpi-valor" id="kpi2-valor">-</p>
+                            </div>
+                            <div class="kpi" id="kpi3">
+                                <p class="kpi-titulo">COMPATIBILIDADE</p>
+                                <p class="kpi-valor" id="kpi3-valor">22 ANOS</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 20px; padding-top: 20px;">
+                            <div style="width: 400px; height: 400px;">
+                                <canvas id="grafico-linha"></canvas>
+                            </div>
+                            <div style="width: 400px; height: 400px;">
+                                <canvas id="grafico-rosca"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -117,7 +140,22 @@
     let posicao2 = 0;
     let posicao3 = 0;
     let posicao4 = 0;
-    let posicaoTela = 0;
+
+    let peca1 = {streetware: 0, casual: 0, social: 0, esportivo: 0};
+    let peca2 = {streetware: 0, casual: 0, social: 0, esportivo: 0};
+    let peca3 = {streetware: 0, casual: 0, social: 0, esportivo: 0};
+    let peca4 = {streetware: 0, casual: 0, social: 0, esportivo: 0};
+
+    let streetware = 0;
+    let casual = 0;
+    let social = 0;
+    let esportivo = 0;
+
+    let notas = [];
+    let tentativa = 0;
+
+    let graficoLinha = null;
+    let graficoRosca = null;
 
     function avancar1() {
         if (posicao1 > -1200) {
@@ -176,12 +214,185 @@
     }
 
     function concluir() {
-        coluna.style.transform = `translatey(${-100}vh)`;
-    }
+        streetware = 0;
+        casual = 0;
+        social = 0;
+        esportivo = 0;
 
+        coluna.style.transform = `translatey(${-100}vh)`;
+
+        if (posicao1 == 0) {
+            peca1 = {streetware : 50, casual : 30, social : 10, esportivo : 10}
+        } else if (posicao1 == -300) {
+            peca1 = {streetware : 30, casual : 25, social : 15, esportivo : 30}
+        } else if (posicao1 == -600) {
+            peca1 = {streetware : 45, casual : 30, social : 5, esportivo : 20}
+        } else if (posicao1 == -900) {
+            peca1 = {streetware : 35, casual : 40, social : 15, esportivo : 10}
+        } else if (posicao1 == -1200) {
+            peca1 = {streetware : 0, casual : 0, social : 0, esportivo : 0}
+        }
+
+        if (posicao2 == 0) {
+            peca2 = {streetware : 65, casual : 20, social : 5, esportivo : 10}
+        } else if (posicao2 == -300) {
+            peca2 = {streetware : 40, casual : 35, social : 20, esportivo : 5}
+        } else if (posicao2 == -600) {
+            peca2 = {streetware : 55, casual : 25, social : 5, esportivo : 15}
+        } else if (posicao2 == -900) {
+            peca2 = {streetware : 15, casual : 15, social : 0, esportivo : 70}
+        } else if (posicao2 == -1200) {
+            peca2 = {streetware : 50, casual : 25, social : 5, esportivo : 20}
+        }
+
+        if (posicao3 == 0) {
+            peca3 = {streetware : 30, casual : 45, social : 10, esportivo : 15}
+        } else if (posicao3 == -300) {
+            peca3 = {streetware : 40, casual : 40, social : 10, esportivo : 10}
+        } else if (posicao3 == -600) {
+            peca3 = {streetware : 20, casual : 15, social : 0, esportivo : 65}
+        } else if (posicao3 == -900) {
+            peca3 = {streetware : 5, casual : 5, social : 0, esportivo : 90}
+        } else if (posicao3 == -1200) {
+            peca3 = {streetware : 10, casual : 10, social : 0, esportivo : 80}
+        }
+
+        if (posicao4 == 0) {
+            peca4 = {streetware : 60, casual : 25, social : 10, esportivo : 5}
+        } else if (posicao4 == -300) {
+            peca4 = {streetware : 45, casual : 20, social : 10, esportivo : 25}
+        } else if (posicao4 == -600) {
+            peca4 = {streetware : 40, casual : 30, social : 15, esportivo : 15}
+        } else if (posicao4 == -900) {
+            peca4 = {streetware : 10, casual : 55, social : 5, esportivo : 30}
+        } else if (posicao4 == -1200) {
+            peca4 = {streetware : 50, casual : 30, social : 15, esportivo : 5}
+        } else if (posicao4 == -1500) {
+            peca4 = {streetware : 35, casual : 45, social : 15, esportivo : 5};
+        }
+        
+        streetware = peca1.streetware + peca2.streetware + peca3.streetware + peca4.streetware;
+        casual = peca1.casual + peca2.casual + peca3.casual + peca4.casual;
+        social = peca1.social + peca2.social + peca3.social + peca4.social;
+        esportivo = peca1.esportivo + peca2.esportivo + peca3.esportivo + peca4.esportivo;
+
+        let pecas = [peca1, peca2, peca3, peca4];
+        let compatíveis = 0;
+
+        for (let i = 0; i < 4; i++) {
+            let peca = pecas[i];
+            if (peca.streetware >= peca.casual && peca.streetware >= peca.social && peca.streetware >= peca.esportivo) {
+                if (streetware >= casual && streetware >= social && streetware >= esportivo) {
+                    compatíveis++;
+                }
+            } else if (peca.casual >= peca.streetware && peca.casual >= peca.social && peca.casual >= peca.esportivo) {
+                if (casual >= streetware && casual >= social && casual >= esportivo) {
+                    compatíveis++;
+                }
+            } else if (peca.social >= peca.casual && peca.social >= peca.streetware && peca.social >= peca.esportivo) {
+                if (social >= streetware && social >= casual && social >= esportivo) {
+                    compatíveis++;
+                }
+            } else if (peca.esportivo >= peca.casual && peca.esportivo >= peca.social && peca.esportivo >= peca.streetware) {
+                if (esportivo >= streetware && esportivo >= casual && esportivo >= social) {
+                    compatíveis++;
+                }
+            }
+        }
+
+        let compatibilidade = (compatíveis / 4) * 100;
+        
+        let totalPontos = streetware + casual + social + esportivo;
+        let estiloVencedor = '';
+        let textoDashboard = '';
+        let pontuacaoVencedor = 0;
+        let nota = 0;
+
+        if (streetware >= casual && streetware >= social && streetware >= esportivo) {
+            estiloVencedor = 'StreetWare';
+            textoDashboard = 'Seu estilo é urbano e autêntico. Você se inspira na cultura das ruas, no skate e no basquete. Confiante e despojada, você usa a moda como forma de expressão.';
+            pontuacaoVencedor = streetware;
+        } else if (casual >= streetware && casual >= social && casual >= esportivo) {
+            estiloVencedor = 'Casual';
+            textoDashboard = 'Seu estilo é confortável e versátil. Você prioriza praticidade sem abrir mão do visual. Equilibrada e acessível, seu look funciona em qualquer situação.';
+            pontuacaoVencedor = casual;
+        } else if (social >= casual && social >= streetware && social >= esportivo) {
+            estiloVencedor = 'Social';
+            textoDashboard = 'Seu estilo é refinado e elegante. Você se preocupa com a impressão que causa e se veste para ocasiões. Cuidadosa e sofisticada, cada detalhe importa.';
+            pontuacaoVencedor = social;
+        } else if (esportivo >= casual && esportivo >= social && esportivo >= streetware) {
+            estiloVencedor = 'Esportivo';
+            textoDashboard = 'Seu estilo é dinâmico e funcional. Você vive em movimento e suas roupas acompanham seu ritmo. Focada e energética, performance e estilo andam juntos.';
+            pontuacaoVencedor = esportivo;
+        }
+
+
+
+        nota = ((pontuacaoVencedor / totalPontos) * 10).toFixed(1);
+
+        notas.push(Number(nota));
+        if (notas.length > 5) {
+            notas.shift();
+        }
+
+        document.getElementById('kpi1-valor').textContent = `#${++tentativa}`;
+        document.getElementById('kpi2-valor').textContent = nota;
+        document.getElementById('kpi3-valor').textContent = compatibilidade + '%';
+
+
+        let labels = [];
+        for (let i = 1; i <= notas.length; i++) {
+            labels.push(`#${i}`);
+        }
+
+        titulo_dash.innerHTML = estiloVencedor;
+        texto_dash.innerHTML = textoDashboard;
+
+        if (graficoLinha) graficoLinha.destroy();
+        if (graficoRosca) graficoRosca.destroy();
+
+        let ctx2 = document.getElementById('grafico-linha');
+        graficoLinha = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Nota por tentativa',
+                    data: notas,
+                    borderColor: '#C8102E',
+                    backgroundColor: 'rgba(200, 16, 46, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        let ctx = document.getElementById('grafico-rosca');
+        graficoRosca = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['StreetWare', 'Casual', 'Social', 'Esportivo'],
+                datasets: [{
+                    data: [streetware, casual, social, esportivo],
+                    backgroundColor: ['#C8102E', '#1a1a1a', '#555', '#bbb']
+                }]
+            },
+            options: {
+                maintainAspectRatio: false
+            }
+        });
+    }
 
     function voltarCloset() {
         coluna.style.transform = `translatey(${0}vh)`;
     }
-
 </script>

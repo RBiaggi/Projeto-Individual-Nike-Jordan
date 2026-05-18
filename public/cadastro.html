@@ -11,7 +11,7 @@
 <body>
     <nav>
         <div class="img-nav">
-            <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png" alt="logo-nike" onclick="window.location.href='home.html'">
+            <img style="display: inline; width: 110px;" src="assets/001_nike-logos-swoosh-black.png" alt="logo-nike" onclick="window.location.href='index.html'">
         </div>
         <h2 style="margin-right: 100px; cursor: pointer;" onclick="window.location.href='login.html'">Login</h2>
     </nav>
@@ -121,7 +121,7 @@
             if (temMaius && temMinus) { label_validar_letras.style.color = "#00ff00" } else { label_validar_letras.style.color = "#ffffff" }
             if (temNum) { label_validar_numeros.style.color = "#00ff00" } else { label_validar_numeros.style.color = "#ffffff" }
             if (temSimb) { label_validar_simbolos.style.color = "#00ff00" } else { label_validar_simbolos.style.color = "#ffffff" }
-            if (senha.lenght >= 8 && senha.lenght <= 20) { label_validar_tamanho.style.color = "#00ff00" } else { label_validar_tamanho.style.color = "#ffffff" }
+            if (senha.length >= 8 && senha.length <= 20) { label_validar_tamanho.style.color = "#00ff00" } else { label_validar_tamanho.style.color = "#ffffff" }
 
 
             if (temMaius && temMinus && temNum && temSimb && senha.length >= 8 && senha.length <= 20) {
@@ -158,6 +158,36 @@
 
             if(emailInvalido){label_validar_email.innerHTML = "Digite um email válido"} else {label_validar_email.innerHTML = ""}
         }
+
+            function cadastrar() {
+        if (usernameInvalido || emailInvalido || senhaInvalida || cfmSenhaInvalido) {
+            label_verificar_campos.innerHTML = "Preencha todos os campos corretamente.";
+            return;
+        }
+
+        label_verificar_campos.innerHTML = "";
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nomeServer: username_input.value.trim(),
+                emailServer: email_input.value.trim(),
+                senhaServer: senha_input.value.trim()
+            })
+        })
+        .then(function(response) {
+            if (response.ok) {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "login.html";
+            } else {
+                alert("Erro ao cadastrar. Tente novamente.");
+            }
+        })
+        .catch(function(erro) {
+            alert("Erro de conexão com o servidor.");
+        });
+    }
     </script>
 
 </body>

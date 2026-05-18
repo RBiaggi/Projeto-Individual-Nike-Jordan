@@ -136,6 +136,11 @@
 
 </html>
 <script>
+    var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+    if (!usuario) {
+        window.location.href = "login.html";
+    }
+
     let posicao1 = 0;
     let posicao2 = 0;
     let posicao3 = 0;
@@ -390,6 +395,30 @@
                 maintainAspectRatio: false
             }
         });
+
+        var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+
+        fetch("/looks/salvar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                idUsuarioServer: usuario.id,
+                estiloServer: estiloVencedor,
+                notaServer: nota,
+                compatibilidadeServer: compatibilidade
+            })
+        })
+        .then(function(response) {
+            if (response.ok) {
+                console.log("Look salvo no banco!");
+            } else {
+                console.log("Erro ao salvar look.");
+            }
+        })
+        .catch(function(erro) {
+            console.log("Erro de conexão: " + erro);
+        });
+
     }
 
     function voltarCloset() {

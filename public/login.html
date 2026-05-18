@@ -44,6 +44,11 @@
 
 
     <script>
+        var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+        if (usuario) {
+            window.location.href = "escolhaGenero.html";
+        }
+    
     function entrar() {
         var email = document.getElementById("email_input_login").value.trim();
         var senha = document.getElementById("senha_input_login").value.trim();

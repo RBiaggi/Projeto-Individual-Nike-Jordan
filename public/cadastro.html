@@ -63,6 +63,20 @@
             </p>
         </div>
     </div>
+    <script>
+        var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+        var btnNav = document.querySelector("nav h2");
+        btnNav.innerHTML = usuario ? "Sair" : "Login";
+        btnNav.onclick = function() {
+            if (usuario) {
+                sessionStorage.removeItem("usuarioLogado");
+                window.location.href = "login.html";
+            } else {
+                window.location.href = "login.html";
+            }
+        };
+    </script>
+</body>
 
     <script>
         var username_input = document.getElementById("username_input");
@@ -190,6 +204,6 @@
     }
     </script>
 
-</body>
+
 
 </html>

@@ -8,6 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">    
     <title>Document</title>
 </head>
+<script>
+    var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+
+    if (!usuario) {
+        window.location.href = "login.html";
+    }
+
+    var btnNav = document.querySelector("nav h2");
+    if (usuario) {
+        btnNav.innerHTML = "Sair";
+        btnNav.onclick = function() {
+            sessionStorage.removeItem("usuarioLogado");
+            window.location.href = "login.html";
+        };
+    }
+</script>
 <body>
     <nav>
         <div class="img-nav">

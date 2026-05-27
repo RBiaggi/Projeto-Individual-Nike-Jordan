@@ -58,12 +58,12 @@
             return;
         }
 
-        fetch("/usuarios/autenticar", {
+        fetch("http://localhost:3333/usuarios/autenticar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                emailServer: email,
-                senhaServer: senha
+                email: email,
+                senha: senha
             })
         })
         .then(function(response) {

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap">
-    <title>Document</title>
+    <title>Closet</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -68,7 +68,7 @@
                                 <img src="assets/look-feminino/pernas/calça-moletom.png" alt="Foto 1">
                                 <img src="assets/look-feminino/pernas/shorts-cargo.jpg" alt="Foto 2">
                                 <img src="assets/look-feminino/pernas/shortsP.webp" alt="Foto 3">
-                                <img src="assets/look-feminino/pernas/nike-pro.jpg" alt="Foto 4">
+                                <img src="assets/look-feminino/pernas/nike-pro.png" alt="Foto 4">
                                 <img src="assets/look-feminino/pernas/nike-pro-calça.jpg" alt="Foto 5">
                             </div>
                         </div>
@@ -398,26 +398,28 @@
 
         var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
-        fetch("/looks/salvar", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                idUsuarioServer: usuario.id,
-                estiloServer: estiloVencedor,
-                notaServer: nota,
-                compatibilidadeServer: compatibilidade
-            })
+    fetch("http://localhost:3333/looks/salvar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            fkUsuario: usuario.idUsuario,
+            tentativa: tentativa,
+            nota: nota,
+            compatibilidade: compatibilidade,
+            categoria: estiloVencedor
         })
-        .then(function(response) {
-            if (response.ok) {
-                console.log("Look salvo no banco!");
-            } else {
-                console.log("Erro ao salvar look.");
-            }
-        })
-        .catch(function(erro) {
-            console.log("Erro de conexão: " + erro);
-        });
+    })
+    .then(function(response) {
+        if (response.ok) {
+            console.log("Look salvo no banco!");
+        } else {
+            console.log("Erro ao salvar look.");
+        }
+    })
+    .catch(function(erro) {
+        console.log("Erro de conexão: " + erro);
+    });
+
 
     }
 

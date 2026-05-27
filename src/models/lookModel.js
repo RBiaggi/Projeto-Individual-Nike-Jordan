@@ -1,19 +1,19 @@
 var database = require("../database/config");
 
-function salvar(idUsuario, estilo, nota, compatibilidade) {
+function salvar(fkUsuario, tentativa, nota, compatibilidade, categoria) {
     var instrucaoSql = `
-        INSERT INTO looks (id_usuario, estilo, nota, compatibilidade) 
-        VALUES ('${idUsuario}', '${estilo}', '${nota}', '${compatibilidade}');
+        INSERT INTO Look (fkUsuario, tentativa, nota, compatibilidade, categoria) 
+        VALUES ('${fkUsuario}', '${tentativa}', '${nota}', '${compatibilidade}', '${categoria}');
     `;
     console.log("Executando SQL: " + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function buscarPorUsuario(idUsuario) {
+function buscarPorUsuario(fkUsuario) {
     var instrucaoSql = `
-        SELECT estilo, nota, compatibilidade, criado_em 
-        FROM looks 
-        WHERE id_usuario = '${idUsuario}';
+        SELECT idLook, tentativa, nota, compatibilidade, categoria, dtHora
+        FROM Look 
+        WHERE fkUsuario = '${fkUsuario}';
     `;
     console.log("Executando SQL: " + instrucaoSql);
     return database.executar(instrucaoSql);

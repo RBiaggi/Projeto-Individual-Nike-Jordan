@@ -1,9 +1,9 @@
 var usuarioModel = require("../models/usuarioModel");
 
 function cadastrar(req, res) {
-    var nome  = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var nome  = req.body.nome;
+    var email = req.body.email;
+    var senha = req.body.senha;
 
     if (nome == undefined) {
         res.status(400).send("Nome está undefined!");
@@ -22,9 +22,10 @@ function cadastrar(req, res) {
             });
     }
 }
+
 function autenticar(req, res) {
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var email = req.body.email;
+    var senha = req.body.senha;
 
     if (email == undefined) {
         res.status(400).send("Email está undefined!");
@@ -34,7 +35,11 @@ function autenticar(req, res) {
         usuarioModel.autenticar(email, senha)
             .then(function(resultado) {
                 if (resultado.length == 1) {
-                    res.json(resultado[0]);
+                    res.json({
+                        idUsuario: resultado[0].idUsuario,
+                        nome:      resultado[0].nome,
+                        email:     resultado[0].email
+                    });
                 } else if (resultado.length == 0) {
                     res.status(403).send("Email e/ou senha inválidos!");
                 } else {

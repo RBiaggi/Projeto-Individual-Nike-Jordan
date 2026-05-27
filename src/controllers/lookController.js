@@ -1,21 +1,24 @@
 var lookModel = require("../models/lookModel");
 
 function salvar(req, res) {
-    var idUsuario = req.body.idUsuarioServer;
-    var estilo = req.body.estiloServer;
-    var nota = req.body.notaServer;
-    var compatibilidade = req.body.compatibilidadeServer;
+    var fkUsuario       = req.body.fkUsuario;
+    var tentativa       = req.body.tentativa;
+    var nota            = req.body.nota;
+    var compatibilidade = req.body.compatibilidade;
+    var categoria       = req.body.categoria;
 
-    if (idUsuario == undefined) {
+    if (fkUsuario == undefined) {
         res.status(400).send("ID do usuário está undefined!");
-    } else if (estilo == undefined) {
-        res.status(400).send("Estilo está undefined!");
+    } else if (tentativa == undefined) {
+        res.status(400).send("Tentativa está undefined!");
     } else if (nota == undefined) {
         res.status(400).send("Nota está undefined!");
     } else if (compatibilidade == undefined) {
         res.status(400).send("Compatibilidade está undefined!");
+    } else if (categoria == undefined) {
+        res.status(400).send("Categoria está undefined!");
     } else {
-        lookModel.salvar(idUsuario, estilo, nota, compatibilidade)
+        lookModel.salvar(fkUsuario, tentativa, nota, compatibilidade, categoria)
             .then(function(resultado) {
                 res.json(resultado);
             })
@@ -27,9 +30,9 @@ function salvar(req, res) {
 }
 
 function buscarPorUsuario(req, res) {
-    var idUsuario = req.params.idUsuario;
+    var fkUsuario = req.params.fkUsuario;
 
-    lookModel.buscarPorUsuario(idUsuario)
+    lookModel.buscarPorUsuario(fkUsuario)
         .then(function(resultado) {
             res.json(resultado);
         })

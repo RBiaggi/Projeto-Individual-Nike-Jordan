@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap">
-    <title>Document</title>
+    <title>Closet</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -37,7 +37,7 @@
                                 <img src="assets/look-masculino/cabeca/chapeu.jpg" alt="Foto 2">
                                 <img src="assets/look-masculino/cabeca/faixa.jpg" alt="Foto 3">
                                 <img src="assets/look-masculino/cabeca/touca.jpg" alt="Foto 4">
-                                <img style="padding: 20px;" src="assets/look-feminino/cabeca/nenhum.png" alt="Foto 5">
+                                <img style="padding: 20px;" src="assets/look-masculino/cabeca/nenhum.png" alt="Foto 5">
 
                             </div>
                         </div>
@@ -71,7 +71,6 @@
                                 <img src="assets/look-masculino/pernas/oversize.avif" alt="Foto 3">
                                 <img src="assets/look-masculino/pernas/shorts.webp" alt="Foto 4">
                                 <img src="assets/look-masculino/pernas/woven.avif" alt="Foto 5">
-                                <img src="assets/look-masculino/pernas/calçaV.jpg" alt="Foto 6">
                             </div>
                         </div>
                         <button onclick="avancar3()">❯</button>
@@ -193,7 +192,7 @@
     }
 
     function avancar3() {
-        if (posicao3 > -1500) {
+        if (posicao3 > -1200) {
             posicao3 = posicao3 - 300;
             faixa3.style.transform = `translateX(${posicao3}px)`;
         }
@@ -397,26 +396,27 @@
 
         var usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
-        fetch("/looks/salvar", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                idUsuarioServer: usuario.id,
-                estiloServer: estiloVencedor,
-                notaServer: nota,
-                compatibilidadeServer: compatibilidade
-            })
+    fetch("http://localhost:3333/looks/salvar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            fkUsuario: usuario.idUsuario,
+            tentativa: tentativa,
+            nota: nota,
+            compatibilidade: compatibilidade,
+            categoria: estiloVencedor
         })
-        .then(function(response) {
-            if (response.ok) {
-                console.log("Look salvo no banco!");
-            } else {
-                console.log("Erro ao salvar look.");
-            }
-        })
-        .catch(function(erro) {
-            console.log("Erro de conexão: " + erro);
-        });
+    })
+    .then(function(response) {
+        if (response.ok) {
+            console.log("Look salvo no banco!");
+        } else {
+            console.log("Erro ao salvar look.");
+        }
+    })
+    .catch(function(erro) {
+        console.log("Erro de conexão: " + erro);
+    });
 
     }
 

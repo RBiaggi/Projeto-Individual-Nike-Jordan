@@ -173,7 +173,7 @@
             if(emailInvalido){label_validar_email.innerHTML = "Digite um email válido"} else {label_validar_email.innerHTML = ""}
         }
 
-            function cadastrar() {
+    function cadastrar() {
         if (usernameInvalido || emailInvalido || senhaInvalida || cfmSenhaInvalido) {
             label_verificar_campos.innerHTML = "Preencha todos os campos corretamente.";
             return;
@@ -181,13 +181,13 @@
 
         label_verificar_campos.innerHTML = "";
 
-        fetch("/usuarios/cadastrar", {
+        fetch("http://localhost:3333/usuarios/cadastrar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                nomeServer: username_input.value.trim(),
-                emailServer: email_input.value.trim(),
-                senhaServer: senha_input.value.trim()
+                nome:  username_input.value.trim(),
+                email: email_input.value.trim(),
+                senha: senha_input.value.trim()
             })
         })
         .then(function(response) {
